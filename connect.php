@@ -2,7 +2,7 @@
 $host="mysql.pixelzexplorer.org";
 
 $pass="tharpixel";
-$user="pixeltharindu";
+$user="'pixeltharindu'@'mysql.pixelzexplorer.org'";
 $db="pixelwordpress";
 $link=mysql_connect($host,$user,$pass) or die("couldn't connect the host ".mysql_error());
 
