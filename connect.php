@@ -1,5 +1,6 @@
 <?php
-$host="mysql.pixelexplorere.com";
+$host="mysql.pixelzexplorer.org";
+
 $pass="tharpixel";
 $user="pixeltharindu";
 $db="pixelwordpress";
