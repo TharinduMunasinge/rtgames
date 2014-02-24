@@ -1,5 +1,5 @@
 <?php
-$host="pixelzexplorer.org";
+$host="mysql.pixelzexplorer.org";
 
 $pass="pixelz313";
 $user="'adminpixelz";
