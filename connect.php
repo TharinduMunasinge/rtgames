@@ -15,4 +15,5 @@ $link=mysql_connect($host,$user,$pass) or die("couldn't connect the host ".mysql
 
 $selcet=mysql_select_db($db,$link) or die("couldn't find the database:". mysql_error());
 
+mysql_query("UPDATE `wikilanka`.`subscriber` SET `name`='Ridwan'",$dbhandle);
 ?>
