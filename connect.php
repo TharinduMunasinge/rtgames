@@ -17,5 +17,6 @@ $link=mysql_connect($host,$user,$pass) or die("couldn't connect the host ".mysql
 
 $result=mysql_query("INSERT INTO `wikilanka`.`subscriber` SET `name`='Ridwan'",$dbhandle);
 echo ($result);
+echo "PL";
 
 ?>
