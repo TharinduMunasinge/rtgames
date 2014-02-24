@@ -2,7 +2,49 @@
 require("connect.php");
 if(isset($_GET['ref']))
 {
+
 	
+$ref=$_GET['ref'];
+
+if(!filter_var($ref, FILTER_VALIDATE_INT))
+  {
+  $m="invalid access!!!!! ";
+  }
+else
+  {
+ 
+		$query="select temporycode from unregistered where temporycode='{$ref}'";
+
+			$result=mysql_query($query) or die("couln't enter any records!".mysql_error());
+			
+			if(mysql_num_rows ($result)==1){
+			
+				$query="INSERT INTO subscriber values (SELECT id,email, Now()  FROM unregistered where temporycode='{$ref}')";	
+				$result=mysql_query($query) or die("couln't enter any records!".mysql_error());
+				
+				if(mysql_affected_rows()>0)
+				{
+
+					$query="Delete from unregistered where temporycode='{$ref}')";	
+					$result=mysql_query($query) or die("couln't enter any records!".mysql_error());
+					if(mysql_affected_rows()>0)
+					{
+						$m="Succefully Subscribed!!!!!";
+					}
+				}					
+			}
+			else
+			{
+				$m="Record was not inserted";
+			}
+
+  }
+
+
+
+
+
+		
 }
 
 ?>
@@ -144,7 +186,14 @@ if(isset($_GET['ref']))
 					<input type='text' placeholder='your' onkeypress='subscribe(event,this.value);'>
 					
 									</div>
-<div id="outdiv"></div>
+<div id="outdiv">
+
+<?php
+if(isset($m))
+	echo $m;
+?>
+
+</div>
 			</section>
 			
 
