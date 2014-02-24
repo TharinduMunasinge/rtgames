@@ -7,15 +7,15 @@ $pass="adminpixelz";
 $user="pixelz313";
 $db="wikilanka";
 =======
-$pass=$url['pass'];
-$user=$url['user'];
-$db=substr($url['path'],1);
->>>>>>> fc878af3512eea225efcc45a44f1d3dafc5d8b48
+//$pass=$url['pass'];
+//$user=$url['user'];
+//$db=substr($url['path'],1);
+
 $link=mysql_connect($host,$user,$pass) or die("couldn't connect the host ".mysql_error());
 
-$selcet=mysql_select_db($db,$link) or die("couldn't find the database:". mysql_error());
+//$selcet=mysql_select_db($db,$link) or die("couldn't find the database:". mysql_error());
 
-$result=mysql_query("UPDATE `wikilanka`.`subscriber` SET `name`='Ridwan'",$dbhandle);
+$result=mysql_query("INSERT INTO `wikilanka`.`subscriber` SET `name`='Ridwan'",$dbhandle);
 echo ($result);
 
 ?>
