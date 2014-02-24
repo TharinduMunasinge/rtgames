@@ -4,7 +4,7 @@ $url=parse_url(getenv("DATABASE_URL"));
 $host = "mysql.pixelzexplorer.org";
 <<<<<<< HEAD
 $pass="adminpixelz";
-$user="'pixelz313";
+$user="pixelz313";
 $db="wikilanka";
 =======
 $pass=$url['pass'];
@@ -15,5 +15,7 @@ $link=mysql_connect($host,$user,$pass) or die("couldn't connect the host ".mysql
 
 $selcet=mysql_select_db($db,$link) or die("couldn't find the database:". mysql_error());
 
-mysql_query("UPDATE `wikilanka`.`subscriber` SET `name`='Ridwan'",$dbhandle);
+$result=mysql_query("UPDATE `wikilanka`.`subscriber` SET `name`='Ridwan'",$dbhandle);
+echo ($result);
+
 ?>
