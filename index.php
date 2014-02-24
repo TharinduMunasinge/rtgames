@@ -1,11 +1,11 @@
-
+eufhduigh
 <?php
 
 
 echo "hello";
 echo "hello";
-$pass="adminpixelz";
-$user="pixelz313";
+$user="adminpixelz";
+$pass="pixelz313";
 $db="wikilanka";
 =======
 //$pass=$url['pass'];
