@@ -87,6 +87,7 @@ a:hover {text-decoration:underline;}
 	position:absolute;
 	top: 0px;
 	left: 40px;
+	z-index:10001;
 }
 .social-nav ul {margin: 0; padding:0;}
 .social-nav ul li{
