@@ -2,56 +2,9 @@
 require("connect.php");
 if(isset($_GET['ref']))
 {
-
 	
-$ref=$_GET['ref'];
-
-if(!filter_var($ref, FILTER_VALIDATE_INT))
-  {
-  $m="invalid access!!!!! ";
-  }
-else
-  {
- 
-		$query="select temporycode from unregistered where temporycode='{$ref}'";
-
-			$result=pg_query($query) or die("couln't enter any records!".pg_error());
-			
-			if(pg_num_rows ($result)==1){
-			
-				$query="INSERT INTO subscriber values (SELECT id,email, Now()  FROM unregistered where temporycode='{$ref}')";	
-				$result=pg_query($query) or die("couln't enter any records!".pg_error());
-				
-				if(pg_affected_rows()>0)
-				{
-
-					$query="Delete from unregistered where temporycode='{$ref}')";	
-					$result=pg_query($query) or die("couln't enter any records!".pg_error());
-					if(pg_affected_rows()>0)
-					{
-						$m="Succefully Subscribed!!!!!";
-					}
-				}					
-			}
-			else
-			{
-				$m="Record was not inserted";
-			}
-
-  }
-
-
-
-
-
-		
 }
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 063688baec77c51b6e19b154217499056152e699
 ?>
 
 
@@ -188,17 +141,10 @@ else
 			<section class='input'>
 				<div>
 				
-					<input type='text' placeholder='your' onkeypress='subscribe(event,this.value);'>
+					<input type='text' placeholder='type your email address..' onkeypress='subscribe(event,this.value);'>
 					
 									</div>
-<div id="outdiv">
-
-<?php
-if(isset($m))
-	echo $m;
-?>
-
-</div>
+<div id="outdiv"></div>
 			</section>
 			
 
@@ -237,23 +183,23 @@ if(isset($m))
 		<!-- Background Slides -->
 		<div id="maximage">
 			<div>
-				<img src="images/backgrounds/bg-img-1.JPG" alt="" />
+				<img src="images/backgrounds/bg-img-1.jpg" alt="" />
 				<img class="gradient" src="images/backgrounds/gradient.png" alt="" />
 			</div>
 			<div>
-				<img src="images/backgrounds/bg-img-2.JPG" alt="" />
+				<img src="images/backgrounds/bg-img-2.jpg" alt="" />
 				<img class="gradient" src="images/backgrounds/gradient.png" alt="" />
 			</div>
 			<div>
-				<img src="images/backgrounds/bg-img-3.JPG" alt="" />
+				<img src="images/backgrounds/bg-img-3.jpg" alt="" />
 				<img class="gradient" src="images/backgrounds/gradient.png" alt="" />
 			</div>
 			<div>
-				<img src="images/backgrounds/bg-img-4.JPG" alt="" />
+				<img src="images/backgrounds/bg-img-4.jpg" alt="" />
 				<img class="gradient" src="images/backgrounds/gradient.png" alt="" />
 			</div>
 			<div>
-				<img src="images/backgrounds/bg-img-5.JPG" alt="" />
+				<img src="images/backgrounds/bg-img-5.jpg" alt="" />
 				<img class="gradient" src="images/backgrounds/gradient.png" alt="" />
 			</div>
 		</div>
@@ -357,7 +303,6 @@ if(isset($m))
 			// facebook 'like' button
 			var fbLike = $('<iframe class="fbLike" src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fdropthebit.com%2Fdemos%2Ffancy_input%2FfancyInput.html&amp;send=false&amp;layout=standard&amp;width=450&amp;show_faces=false&amp;font=arial&amp;action=like&amp;height=35&amp;colorscheme=light&amp;layout=button_count&amp;appId=2398652648"></iframe>');
 			$('.social').append(fbLike, tweeter);
-			
 			!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="http://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
 
 			window.getComputedStyle(fbLike[0]).getPropertyValue('top');
