@@ -1,11 +1,11 @@
 <?php
 //$url=parse_url(getenv("DATABASE_URL"));
 //$host=$url['host'];
-$host = "ec2-54-204-43-139.compute-1.amazonaws.com:5432";
+$host = "ec2-54-204-40-140.compute-1.amazonaws.com:5432";
 
-$pass="0tvwpmyN-KFogkyHxopykhML78";
-$user="ipsffhhngwwuqy";
-$db="dce83r7lbr8tgo";
+$pass="qPzq1h_IVtSjEwjNWwj4i_ec9B";
+$user="jytheohvoaazpz";
+$db="dfp46tkmv2j0t6";
 
 //$pass=$url['pass'];
 //$user=$url['user'];
