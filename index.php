@@ -15,19 +15,19 @@ else
  
 		$query="select temporycode from unregistered where temporycode='{$ref}'";
 
-			$result=mysql_query($query) or die("couln't enter any records!".mysql_error());
+			$result=pg_query($query) or die("couln't enter any records!".pg_error());
 			
-			if(mysql_num_rows ($result)==1){
+			if(pg_num_rows ($result)==1){
 			
 				$query="INSERT INTO subscriber values (SELECT id,email, Now()  FROM unregistered where temporycode='{$ref}')";	
-				$result=mysql_query($query) or die("couln't enter any records!".mysql_error());
+				$result=pg_query($query) or die("couln't enter any records!".pg_error());
 				
-				if(mysql_affected_rows()>0)
+				if(pg_affected_rows()>0)
 				{
 
 					$query="Delete from unregistered where temporycode='{$ref}')";	
-					$result=mysql_query($query) or die("couln't enter any records!".mysql_error());
-					if(mysql_affected_rows()>0)
+					$result=pg_query($query) or die("couln't enter any records!".pg_error());
+					if(pg_affected_rows()>0)
 					{
 						$m="Succefully Subscribed!!!!!";
 					}
@@ -47,21 +47,7 @@ else
 		
 }
 
-$pass="adminpixelz";
-$user="pixelz313";
-$db="wikilanka";
-=======
-//$pass=$url['pass'];
-//$user=$url['user'];
-//$db=substr($url['path'],1);
 
-$dbhandle=mysql_connect($host,$user,$pass) or die("couldn't connect the host ".mysql_error());
-
-//$selcet=mysql_select_db($db,$link) or die("couldn't find the database:". mysql_error());
-
-$result=mysql_query("INSERT INTO `wikilanka`.`subscriber` SET `name`='Ridwan'",$dbhandle);
-echo ($result);
-echo "PL";
 
 ?>
 

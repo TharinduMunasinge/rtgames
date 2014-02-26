@@ -34,9 +34,9 @@ if (isset($email))
 	
 
 	$query="Insert into unregistered values ('','$email',Now(),".mt_rand ().")";
-			$insert=mysql_query($query) or die("couln't enter any records!".mysql_error());
+			$insert=pg_query($query) or die("couln't enter any records!".pg_error());
 
-			if(mysql_affected_rows()>0){
+			if(pg_affected_rows()>0){
 			
 				$m="Succesfully Subscribed!!!!";
 			
