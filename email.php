@@ -26,15 +26,18 @@ if (isset($email))
   $mailcheck = spamcheck($email);
   if ($mailcheck==FALSE)
     {
+	echo "6";
     return "Invalid input";
     }
   else
     {
 
 	
-
+	echo "1";
 	$query="Insert into unregistered values ('','$email',Now(),".mt_rand ().")";
+	echo "3";
 			$insert=pg_query($query) or die("couln't enter any records!".pg_error());
+	echo "4";
 
 			if(pg_affected_rows()>0){
 			
@@ -45,7 +48,8 @@ if (isset($email))
 			{
 				$m="Record was not inserted";
 			}
-
+	
+	echo "5";
 
 	
 
