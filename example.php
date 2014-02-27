@@ -12,4 +12,5 @@
 	if($result === true)
 		echo "Message sent";
 	else
-		echo "errror;
+		echo "errror";
+?>
