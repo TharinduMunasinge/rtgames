@@ -8,7 +8,7 @@ Postmark\Mail::compose($postmarkApiKey)
     ->subject('Subject')
     ->messagePlain('Plaintext message')
     ->send();
-
+echo "done";
 
 //mail('munasinghetharindu@gmail.com', "Subject:test","hello", "From:no-reply@rtgames.com" );
 ?>
