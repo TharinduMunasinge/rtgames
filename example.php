@@ -7,8 +7,9 @@
 	$result = $postmark->to("munasinghetharindu@gmail.com.com")
 		->subject("Email Subject")
 		->plain_message("This is a plain text message.")
-		->attachment('File.pdf', $file_as_string, 'application/pdf')
 		->send();
 	
 	if($result === true)
 		echo "Message sent";
+	else
+		echo "errror;
