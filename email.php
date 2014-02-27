@@ -35,7 +35,8 @@ if (isset($email))
 	
 	echo "1";
 	
-	$query="Insert into unregistered values ('','$email','".time()."',".mt_rand ().")";
+	$query="INSERT INTO unregistered (email,time,temporycode) VALUES ('$email','".time()."','".mt_rand ()."')";
+
 	echo "3";
 			$insert=pg_query($dbconn,$query) or die("couln't enter any records!".pg_error());
 	echo "4";
