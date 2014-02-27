@@ -34,11 +34,12 @@ if (isset($email))
 
 	
 	
-	echo time();
-	$query="INSERT INTO unregistered (email,time,temporycode) VALUES ('$email',CURRENT_TIMESTAMP,'".mt_rand ()."')";
+	
+	$query="INSERT INTO  unregistered(email,time,temporycode) values  ('$email',LOCALTIMESTAMP,".mt_rand ().")";
+//Insert into ('abc@def.com',LOCALTIMESTAMP,11111111); 
 
 	
-			$insert=pg_query($dbconn,$query) or die("couln't enter any records!".pg_error());
+			$insert=pg_query($query) or die("couln't enter any records!".pg_error());
 	echo "4";
 
 			if(pg_affected_rows()>0){
