@@ -36,7 +36,7 @@ if (isset($email))
 	echo "1";
 	$query="Insert into unregistered values ('','$email',Now(),".mt_rand ().")";
 	echo "3";
-			$insert=pg_query($query) or die("couln't enter any records!".pg_error());
+			$insert=pg_query($dbconn,$query) or die("couln't enter any records!".pg_error());
 	echo "4";
 
 			if(pg_affected_rows()>0){
