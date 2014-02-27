@@ -26,18 +26,18 @@ if (isset($email))
   $mailcheck = spamcheck($email);
   if ($mailcheck==FALSE)
     {
-	echo "6";
+	
     return "Invalid input";
     }
   else
     {
 
 	
-	echo "1";
 	
+	echo time();
 	$query="INSERT INTO unregistered (email,time,temporycode) VALUES ('$email','".time()."','".mt_rand ()."')";
 
-	echo "3";
+	
 			$insert=pg_query($dbconn,$query) or die("couln't enter any records!".pg_error());
 	echo "4";
 
