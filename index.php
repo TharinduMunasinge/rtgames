@@ -47,13 +47,8 @@ else
 		
 }
 
-<<<<<<< HEAD
 
-
-=======
->>>>>>> 063688baec77c51b6e19b154217499056152e699
 ?>
-
 
 <!DOCTYPE html>
 <!--[if lt IE 7]> <html lang="en" class="no-js ie6"> <![endif]-->
